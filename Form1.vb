@@ -1,7 +1,7 @@
 ﻿Public Class Form1
 
     ' IP Webcam, BYOD & OneLAN viewer utility
-    ' Guy Tittley @ LTSTS University of Edinburgh = Jan - May 2019 - VS2019
+    ' Guy Tittley @ LTSTS University of Edinburgh = Sept 2022 VS2010
     ' https://github.com/binarystar2019 '
 
     ' **************************************************************
@@ -10,20 +10,19 @@
 
         ' Populate ComboBox1, ComboBox2, ComboBox3 and ComboBox4 from four text files at C:\temp\***.txt
 
-
         Dim fff1 As String() 'webcams
         Dim fff2 As String() 'onelans
         Dim fff3 As String() 'byod
         Dim fff4 As String() 'mlc plus panels
 
-        fff1 = System.IO.File.ReadAllLines("C:\temp\Webcams.txt")
+        fff1 = System.IO.File.ReadAllLines("C:\temp\WEBCAMS.txt")
         Me.ComboBox1.Items.AddRange(fff1)
         If ComboBox1.Text = "" Then
             ComboBox1.Text = "http://"
         End If
 
 
-        fff2 = System.IO.File.ReadAllLines("C:\temp\OneLANs.txt")
+        fff2 = System.IO.File.ReadAllLines("C:\temp\ONELANS.txt")
         Me.ComboBox2.Items.AddRange(fff2)
         If ComboBox2.Text = "" Then
             ComboBox2.Text = "http://"
@@ -37,7 +36,7 @@
         End If
 
 
-        fff4 = System.IO.File.ReadAllLines("C:\temp\MLCpanels.txt")
+        fff4 = System.IO.File.ReadAllLines("C:\temp\MLC.txt")
         Me.ComboBox4.Items.AddRange(fff4)
         If ComboBox4.Text = "" Then
             ComboBox4.Text = "http://"
@@ -53,7 +52,7 @@
 
         LineOfText = ComboBox1.Text
         urlTextFile = LineOfText.Split(",")
-        System.Diagnostics.Process.Start("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", (urlTextFile(0)))
+        Process.Start("https://" + urlTextFile(0))
 
     End Sub
 
@@ -65,7 +64,7 @@
 
         LineOfText2 = ComboBox2.Text
         urlTextFile = LineOfText2.Split(",")
-        System.Diagnostics.Process.Start("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", (urlTextFile(0)))
+        Process.Start("https://" + urlTextFile(0))
 
     End Sub
 
@@ -87,7 +86,7 @@
 
         words(0) = words(0) & ("/status/screen_snap_shot")
 
-        System.Diagnostics.Process.Start("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", (words(0)))
+        Process.Start("https://" + words(0))
 
 
     End Sub
@@ -103,7 +102,7 @@
     Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
         ' Show Webcam Password
 
-        MessageBox.Show("root: darw1nwebcam / spyspy ", "WebCam Password")
+        MessageBox.Show("root: darw1nwebcam / darw1nptzcam", "WebCam Password")
 
     End Sub
 
@@ -117,7 +116,7 @@
         urlTextFile = LineOfText3.Split(",")
         ' System.Diagnostics.Process.Start(urlTextFile(0))
 
-        System.Diagnostics.Process.Start("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", (urlTextFile(0)))
+        Process.Start("https://" + urlTextFile(0))
 
 
     End Sub
@@ -215,11 +214,11 @@
         words(0) = words(0) & ("/web/vtlp/ae881ce2-c22a-49d8-9e67-b2607c419607/vtlp.html") ' 8-4-4-4-12 UUID cert may be different - how generated?? IP and date??  MAC and date??
 
 
-        System.Diagnostics.Process.Start("C:\Program Files\Internet Explorer\iexplore.exe", (words(0)))
+        Process.Start("https://" + words(0))
 
         ' /web/vtlp/f13066c9-ffc5-4706-9ebd-37a44f92d125/vtlp.html
 
-        ' System.Diagnostics.Process.Start("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", (words(0)))
+        ' Process.Start("https://" + words(0))
         ' check MLC Plus 100 same as MLC Plus 200
         ' check how 8-4-4-4-12 number GUI created
 
@@ -232,9 +231,7 @@
         MessageBox.Show("admin: extron / darw1nmlc", "MLC Plus Password")
 
     End Sub
-
-    
-    
+      
     Private Sub Button11_Click(sender As System.Object, e As System.EventArgs) Handles Button11.Click
 
         ' FTP access to OneLAN in web browser
@@ -254,7 +251,7 @@
 
         words(0) = ("ftp://") & words(0)
 
-        System.Diagnostics.Process.Start("C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", (words(0)))  ' Access OneLAN via FTP in Chrome browser
+        Process.Start("https://" + words(0))  ' Access OneLAN via FTP in default browser
 
 
     End Sub

@@ -173,7 +173,7 @@ Partial Class Form1
         'Button8
         '
         Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Button8.Location = New System.Drawing.Point(146, 317)
+        Me.Button8.Location = New System.Drawing.Point(205, 317)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(91, 28)
         Me.Button8.TabIndex = 13
@@ -231,7 +231,7 @@ Partial Class Form1
         'Button12
         '
         Me.Button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Button12.Location = New System.Drawing.Point(146, 161)
+        Me.Button12.Location = New System.Drawing.Point(205, 161)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(91, 28)
         Me.Button12.TabIndex = 19
